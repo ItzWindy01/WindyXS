@@ -15,7 +15,7 @@ local Window = Fluent:CreateWindow({
 })
 local Tabs = {
     Main = Window:AddTab({ Title = "Main Farm", Icon = "home" }),
-    Setting = Window:AddTab({ Title = "Setting Farming", Icon = "settings" }),
+    Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
     Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
     Teleport = Window:AddTab({ Title = "Travel", Icon = "palmtree" }),
@@ -2517,7 +2517,7 @@ coroutine.wrap(YTZCAJC_fake_script)()
 local Farming = Tabs.Main:AddSection("Farming")
 
 
-local listfastattack = {'Slow Attack','Fast Attack','Extreme Fast Attack'}
+local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 
     local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
         Title = "Select Fast Attack",
@@ -2533,7 +2533,7 @@ local listfastattack = {'Slow Attack','Fast Attack','Extreme Fast Attack'}
 	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
 		_G.Fast_Delay = 0.10
 	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
-		_G.Fast_Delay = 0.1
+		_G.Fast_Delay = 0
 	end
 end)
 
@@ -2719,8 +2719,8 @@ end)
 
 
     Tabs.Main:AddButton({
-        Title = "Fps Booster",
-        Description = "Boost your fps",
+        Title = "FPS Boost",
+        Description = "Smoother FPS",
         Callback = function()
             FPSBooster()
         end
